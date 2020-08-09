@@ -1,3 +1,3 @@
 class Church < ApplicationRecord
-  validates :title, :place, presence: true
+  validates :name, :place, presence: true
 end
