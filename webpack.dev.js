@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+var path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -11,8 +12,11 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    overlay: true,
     hot: true,
-    port: 3000
+    port: 3000,
+    writeToDisk: true
   },
 };

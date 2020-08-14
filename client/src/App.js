@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from "axios";
- 
+import axios from "axios"; 
+
 export default class App extends Component {
 
   componentDidMount () {
@@ -11,10 +11,14 @@ export default class App extends Component {
   }
 
   render () {
-    const { title } = this.props;
 
     return (
-      <div>{title}</div>
+      <div className="">
+        <div className="">S.Nos</div>
+        <div className="">Action</div>
+        <div className="">Name</div>
+        <div className="">Place</div>
+      </div>
     );
   }
 }
