@@ -1,0 +1,14 @@
+.table {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  flex: 1;
+  height: 40px;
+}
+
+.header--60 {
+  width: 60px;
+}
