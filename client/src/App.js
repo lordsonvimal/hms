@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios"; 
+import "src/styles/table.scss";
 
 export default class App extends Component {
 
@@ -13,11 +14,11 @@ export default class App extends Component {
   render () {
 
     return (
-      <div className="">
-        <div className="">S.Nos</div>
-        <div className="">Action</div>
-        <div className="">Name</div>
-        <div className="">Place</div>
+      <div className="table">
+        <div className="header">S.No</div>
+        <div className="header">Action</div>
+        <div className="header">Name</div>
+        <div className="header">Place</div>
       </div>
     );
   }
