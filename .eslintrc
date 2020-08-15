@@ -1,6 +1,12 @@
 {
   "parser": "babel-eslint",
   "rules": {
-    
+    // possible errors
+    "no-console": 2
+    // Best practices
+    // Strict Mode
+    // Variables
+    // Stylistic Issues
+    // ES6
   }
 }

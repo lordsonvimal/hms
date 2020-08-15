@@ -1,3 +1,9 @@
+.text-truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .table {
   align-items: center;
   background: #999;
@@ -7,6 +13,7 @@
 }
 
 .header {
+  @extend .text-truncate;
   flex: 1;
   height: 40px;
 }
