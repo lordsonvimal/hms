@@ -56,7 +56,6 @@ module.exports = {
     }),
     new StylelintPlugin({
       emitError: true
-      // failOnError: true
     })
   ],
   output: {
