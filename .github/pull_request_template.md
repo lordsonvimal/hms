@@ -3,11 +3,6 @@
 - 
 - 
 
-
-
-
-
-
 ### Screenshot
 
 #### Mandatory
