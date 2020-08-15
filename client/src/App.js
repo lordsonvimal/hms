@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import axios from "axios"; 
 import "src/app.scss";
+import axios from "axios";
 
 export default class App extends Component {
 
   componentDidMount () {
-    axios.get("/api/v1/churches")
-    .then(response => {
-      console.log(response);
-    });
+    axios.get("/api/v1/churches");
   }
 
   render () {
