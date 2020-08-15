@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a ROR + React project for managing student information
 
-Things you may want to cover:
+## Versions
 
-* Ruby version
+* Ruby - 2.7.0
+* Rails - 6.0.2
+* React - 16.13.1
+* Node - 14.6.0
 
-* System dependencies
+## Development
 
-* Configuration
+* Rails unit testing - Rspec
+* Rails serializer - Fast JSON Serializer
+* HMR (Hot module replacement)
+* SASS
+* IE Support
+* SQLite DB
 
-* Database creation
+## To include
 
-* Database initialization
+* Support file handling
+* Support mixins
+* Do build settings (Minify, chunking, etc.)
+* Add routing
+* Add eslint rules
+* Add stylelint and its rules
+* Integrate E2E
+* Integrate CI
+* Integrate CC
+* Add pdf support
+* Add flow
+* Add PR configuration
+* Free host in heroku
+* Add react components
+* Add style components
+* Add Internationalization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

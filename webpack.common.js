@@ -1,7 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
   entry: './client/src/index.js',
@@ -26,6 +26,7 @@ module.exports = {
             loader: `postcss-loader`,
               options: {
                 options: {},
+                plugins: () => [autoprefixer()],
                 sourceMap: true
               }
            },
@@ -34,7 +35,8 @@ module.exports = {
               options: {
                 sourceMap: true
               }
-           }
+           },
+           "import-glob-loader"
         ],
       }
     ],
@@ -55,6 +57,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle_[hash].js',
   },
 };

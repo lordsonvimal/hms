@@ -13,10 +13,17 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    inline: true,
     compress: true,
+    disableHostCheck: true,
     overlay: true,
     hot: true,
-    port: 3000,
-    writeToDisk: true
+    port: 8080,
+    writeToDisk: true,
+    proxy: {
+      '/api': {
+          target: 'http://localhost:3001'
+      },
+    }
   },
 };
