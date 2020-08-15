@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require("autoprefixer");
 
@@ -52,6 +53,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'hms',
       template: './client/src/index.html',
+    }),
+    new StylelintPlugin({
+      emitError: true
     })
   ],
   output: {
