@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
-var path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -12,18 +11,21 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: "./public/assets/bundles",
     inline: true,
     compress: true,
-    disableHostCheck: true,
     overlay: true,
     hot: true,
+    host: "0.0.0.0",
     port: 8080,
     writeToDisk: true,
     proxy: {
       '/api': {
           target: 'http://localhost:3001'
       },
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*"
     }
   },
 };
