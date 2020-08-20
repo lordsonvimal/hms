@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
+// @flow
+
+import React, { PureComponent } from 'react';
 import "src/app.scss";
 import axios from "axios";
 
-export default class App extends Component {
+import RouteContainer from "src/containers/RouteContainer";
+
+type Props = {};
+
+export default class App extends PureComponent<Props> {
 
   componentDidMount () {
     axios.get("/api/v1/churches");
@@ -11,13 +17,7 @@ export default class App extends Component {
   render () {
 
     return (
-      <div className="table">
-        <div className="header">S.No</div>
-        <div className="header">Action</div>
-        <div className="header">Name</div>
-        <div className="header">Place</div>
-      </div>
+      <RouteContainer />
     );
   }
 }
- 
