@@ -11,14 +11,15 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: "./public/assets/bundles",
-    inline: true,
     compress: true,
-    overlay: true,
+    contentBase: "./public/assets/bundles",
+    historyApiFallback: true,
+    inline: true,
     hot: true,
     host: "0.0.0.0",
-    port: 8080,
     writeToDisk: true,
+    overlay: true,
+    port: 8080,
     proxy: {
       '/api': {
           target: 'http://localhost:3001'
