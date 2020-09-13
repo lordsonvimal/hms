@@ -80,8 +80,9 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'public', 'assets', 'bundles'),
-    publicPath: "/public/assets/bundles",
-    filename: '[name].[hash].bundle.js',
-    umdNamedDefine: true
+    // publicPath: "/public/assets/bundles",
+    publicPath: "/",
+    filename: '[name].[hash].bundle.js'
+    // umdNamedDefine: true
   }
 };

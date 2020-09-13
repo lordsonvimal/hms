@@ -5,19 +5,35 @@
 }
 
 .table {
-  align-items: center;
-  background: #999999;
-  display: flex;
+  border-collapse: collapse;
   height: 100%;
   width: 100%;
 }
 
-.header {
-  @extend .text-truncate;
-  flex: 1;
-  height: 40px;
+.table__row {
+  height: 45px;
 }
 
-.header--60 {
-  width: 60px;
+.table__row--header {
+  height: 30px;
+}
+
+.table__row--header,
+.table__row__cell {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.cell--40px {
+  width: 40px;
+}
+
+.table__header__cell,
+.table__row__cell {
+  @extend .text-truncate;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.table__actions {
+  margin-right: 5px;
 }

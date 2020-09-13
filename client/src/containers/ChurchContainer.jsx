@@ -3,6 +3,8 @@
 import React, { PureComponent } from 'react';
 import http from "src/services/httpService";
 
+import SimpleTable from "src/containers/SimpleTable";
+
 type Props = {};
 
 export default class ChurchContainer extends PureComponent<Props> {
@@ -11,14 +13,46 @@ export default class ChurchContainer extends PureComponent<Props> {
     await http.get("/api/v1/churches");
   }
 
+  edit = (church: Object) => {
+    console.log(church); //eslint-disable-line
+  }
+
+  remove = (church: Object) => {
+    console.log(church); //eslint-disable-line
+  }
+
+  getActions = () => {
+    const actions = [{
+      callback: this.edit,
+      name: "Edit"
+    },{
+      callback: this.remove,
+      name: "Delete"
+    }];
+
+    return actions;
+  }
+
   render () {
     return (
-      <div className="table">
-        <div className="header">S.No</div>
-        <div className="header">Action</div>
-        <div className="header">Name</div>
-        <div className="header">Place</div>
-      </div>
+      <SimpleTable
+        actions={this.getActions()}
+        headers={[{
+          addClass: "",
+          name: "Church Name"
+        },
+        {
+          customClass: "",
+          name: "Place"
+        }]}
+        rows={[{
+          name: "CSI Christ church",
+          id: 1,
+          place: "Virugambakkam"
+        }]}
+        rowSchema={["name", "place"]}
+        showRowNumber={true}  
+      />
     );
   }
 }

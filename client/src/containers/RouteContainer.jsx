@@ -2,8 +2,6 @@
 
 import React, { PureComponent } from 'react';
 import { Route } from 'react-router-dom';
-// import ChurchContainer from "src/containers/ChurchContainer";
-// import ExamContainer from "src/containers/ExamContainer";
 
 const ChurchContainer = React.lazy(() => import("src/containers/ChurchContainer"));
 const ExamContainer = React.lazy(() => import("src/containers/ExamContainer"));
