@@ -80,6 +80,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'public', 'assets', 'bundles'),
+    pathinfo: false,
     // publicPath: "/public/assets/bundles",
     publicPath: "/",
     filename: '[name].[hash].bundle.js'

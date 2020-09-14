@@ -15,11 +15,16 @@ type Header = {
   name: string
 };
 
+type RowSchema = {
+  addClass?: string,
+  id: string
+};
+
 type Props = {
   actions: $ReadOnlyArray<Action>,
   headers: $ReadOnlyArray<Header>,
   rows: $ReadOnlyArray<Object>,
-  rowSchema: $ReadOnlyArray<string>,
+  rowSchema: $ReadOnlyArray<RowSchema>,
   showRowNumber?: boolean
 };
 
@@ -30,17 +35,19 @@ export default class SimpleTable extends PureComponent<Props> {
     const rowElements = [];
     _.map(rows, (row, rowIndex) => {
       const rowCells = [];
-      if (showRowNumber) rowCells.push(<td className="table__row__cell cell--30px" key={`rowNumber_${rowIndex}`}>{rowIndex + 1}</td>);
+      if (showRowNumber) rowCells.push(<div className="table__cell table__cell--40px" key={`rowNumber_${rowIndex}`}>{rowIndex + 1}</div>);
       _.map(rowSchema, (schema, index) => {
-        rowCells.push(<td className="table__row__cell" key={`row_${rowIndex}_cell${index}`}>{row[schema]}</td>);
+        const addClass = schema.addClass ? schema.addClass : "";
+        const customClass = `table__cell ${addClass}`; 
+        rowCells.push(<div className={customClass} key={`row_${rowIndex}_cell${index}`}>{row[schema.id]}</div>);
       });
       if (!_.isEmpty(actions)) {
         const actionCells = _.map(actions, (action, index) => {
           return <span className="table__actions" key={`row_${rowIndex}_action_${index}`} onClick={() => action.callback(row)}>{action.name}</span>;
         });
-        rowCells.push(<td className="table__row__cell" key={`action_${rowIndex}`}>{actionCells}</td>);
+        rowCells.push(<div className="table__cell table__cell--actions" key={`action_${rowIndex}`}>{actionCells}</div>);
       }
-      rowElements.push(<tr className="table__row table_row--content" key={`row_${rowIndex}`}>{rowCells}</tr>);
+      rowElements.push(<div className="table__row table__row--content" key={`row_${rowIndex}`}>{rowCells}</div>);
     });
     return rowElements;
   }
@@ -49,8 +56,8 @@ export default class SimpleTable extends PureComponent<Props> {
     const { headers } = this.props;
     const headerCells = _.map(headers, (header, index) => {
       const addClass = header.addClass ? header.addClass : "";
-      const customClass = `table__header__cell ${addClass}`; 
-      return <th className={customClass} key={`header_${index}`}>{header.name}</th>;
+      const customClass = `table__cell ${addClass}`; 
+      return <div className={customClass} key={`header_${index}`}>{header.name}</div>;
     });
     return headerCells;
   }
@@ -58,18 +65,18 @@ export default class SimpleTable extends PureComponent<Props> {
   render () {
     const { actions, showRowNumber } = this.props;
     return (
-      <table className="table">
-        <thead className="table__header">
-          <tr className="table__row table__row--header">
-            {showRowNumber && <th className="table__header__cell cell--40px">S.No</th>}
+      <div className="table">
+        <div className="table__header table__header--fixed">
+          <div className="table__row table__row--header">
+            {showRowNumber && <div className="table__cell table__cell--40px">S.No</div>}
             {this.getHeaders()}
-            {!_.isEmpty(actions) && <th className="table__header__cell">Actions</th>}
-          </tr>
-        </thead>
-        <tbody className="table__body">
+            {!_.isEmpty(actions) && <div className="table__cell table__cell--actions">Actions</div>}
+          </div>
+        </div>
+        <div className="table__body">
           {this.getRows()}
-        </tbody>
-      </table>
+        </div>
+      </div>
     );
   }
 }

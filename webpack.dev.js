@@ -3,7 +3,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'eval-cheap-module-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new Dotenv({
@@ -22,7 +22,7 @@ module.exports = {
     port: 8080,
     proxy: {
       '/api': {
-          target: 'http://localhost:3001'
+        target: 'http://localhost:3001'
       },
     },
     headers: {

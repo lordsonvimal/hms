@@ -38,11 +38,11 @@ export default class ChurchContainer extends PureComponent<Props> {
       <SimpleTable
         actions={this.getActions()}
         headers={[{
-          addClass: "",
+          addClass: "table__cell--160px",
           name: "Church Name"
         },
         {
-          customClass: "",
+          addClass: "table__cell--160px",
           name: "Place"
         }]}
         rows={[{
@@ -50,7 +50,11 @@ export default class ChurchContainer extends PureComponent<Props> {
           id: 1,
           place: "Virugambakkam"
         }]}
-        rowSchema={["name", "place"]}
+        rowSchema={[{
+          addClass: "table__cell--160px",
+          id: "name"}, {addClass: "table__cell--160px",
+            id: "place"
+        }]}
         showRowNumber={true}  
       />
     );
