@@ -35,7 +35,7 @@ export default class SimpleTable extends PureComponent<Props> {
     const rowElements = [];
     _.map(rows, (row, rowIndex) => {
       const rowCells = [];
-      if (showRowNumber) rowCells.push(<div className="table__cell table__cell--40px" key={`rowNumber_${rowIndex}`}>{rowIndex + 1}</div>);
+      if (showRowNumber) rowCells.push(<div className="table__cell table__cell--50px" key={`rowNumber_${rowIndex}`}>{rowIndex + 1}</div>);
       _.map(rowSchema, (schema, index) => {
         const addClass = schema.addClass ? schema.addClass : "";
         const customClass = `table__cell ${addClass}`; 
@@ -43,7 +43,9 @@ export default class SimpleTable extends PureComponent<Props> {
       });
       if (!_.isEmpty(actions)) {
         const actionCells = _.map(actions, (action, index) => {
-          return <span className="table__actions" key={`row_${rowIndex}_action_${index}`} onClick={() => action.callback(row)}>{action.name}</span>;
+          return <span className="table__actions" key={`row_${rowIndex}_action_${index}`} onClick={() => action.callback(row)}>
+            {action.icon && <i className={action.icon} />}{action.name}
+          </span>;
         });
         rowCells.push(<div className="table__cell table__cell--actions" key={`action_${rowIndex}`}>{actionCells}</div>);
       }
@@ -68,7 +70,7 @@ export default class SimpleTable extends PureComponent<Props> {
       <div className="table">
         <div className="table__header table__header--fixed">
           <div className="table__row table__row--header">
-            {showRowNumber && <div className="table__cell table__cell--40px">S.No</div>}
+            {showRowNumber && <div className="table__cell table__cell--50px">S.No</div>}
             {this.getHeaders()}
             {!_.isEmpty(actions) && <div className="table__cell table__cell--actions">Actions</div>}
           </div>

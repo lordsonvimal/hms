@@ -42,12 +42,28 @@ module.exports = {
            },
            "import-glob-loader"
         ],
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          include:  path.resolve(__dirname, "client", "src"),
+          name: "[name].[ext]"
+        }
+      },
     ],
   },
   optimization: {
     moduleIds: 'hashed',
+    runtimeChunk: 'single',
     splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
       chunks: 'all',
       name: false
     }

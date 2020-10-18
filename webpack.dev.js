@@ -11,7 +11,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    compress: true,
+    compress: false,
     contentBase: "./public/assets/bundles",
     historyApiFallback: true,
     inline: true,
@@ -29,4 +29,5 @@ module.exports = {
       "Access-Control-Allow-Origin": "*"
     }
   },
+  watch: true
 };

@@ -25,9 +25,14 @@
   display: flex;
   flex: 1 1 auto;
   height: 45px;
+
+  &:hover {
+    background: #eeeeee;
+  }
 }
 
 .table__row--header {
+  background: #eeeeee;
   border-bottom: 2px solid #eeeeee;
   height: 30px;
 }
@@ -43,9 +48,9 @@
   padding-left: 10px;
 }
 
-.table__cell--40px {
-  max-width: 40px;
-  min-width: 40px;
+.table__cell--50px {
+  max-width: 50px;
+  min-width: 50px;
 }
 
 .table__cell--120px {
@@ -65,5 +70,7 @@
 }
 
 .table__actions {
+  cursor: pointer;
   margin-right: 5px;
+  padding: 4px;
 }
