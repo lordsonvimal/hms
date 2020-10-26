@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_101006) do
+ActiveRecord::Schema.define(version: 2020_10_26_162212) do
 
   create_table "churches", force: :cascade do |t|
     t.string "name"
     t.string "place"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.string "name"
+    t.integer "max"
+    t.integer "pass"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

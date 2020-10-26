@@ -5,7 +5,8 @@
 }
 
 .table {
-  margin: 8px;
+  height: 100%;
+  overflow: auto;
 }
 
 .table__header,

@@ -32,6 +32,6 @@ class Api::V1::ChurchesController < ApplicationController
     end
 
     def set_church
-      @church = Church.find_by_id(church_params[:id])
+      @church = Church.find_by_id(params[:id])
     end
 end

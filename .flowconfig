@@ -1,5 +1,5 @@
 [version]
-0.131.0
+0.136.0
 
 [ignore]
 .*/github/.*
@@ -35,4 +35,6 @@ munge_underscores=true
 server.max_workers=1
 traces=0
 sharedmemory.log_level=1
+types_first=false
+well_formed_exports=false
 

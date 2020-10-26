@@ -124,7 +124,7 @@ export default class ChurchContainer extends PureComponent<Props, State> {
     const { churches, selected, show } = this.state;
 
     return (
-      <div>
+      <div className="height-100p pad-8">
         <SimpleTable
           actions={this.getActions()}
           headers={[{
