@@ -1,0 +1,36 @@
+.row {
+  display: block;
+  width: 100%;
+}
+
+.pad-8 {
+  padding: 8px;
+}
+
+.pad-b-8 {
+  padding-bottom: 8px;
+}
+
+.pad-t-8 {
+  padding-top: 8px;
+}
+
+.float {
+  position: fixed;
+}
+
+.float-r-16 {
+  right: 16px;
+}
+
+.float-b-16 {
+  bottom: 16px;
+}
+
+.height-100p {
+  height: 100%;
+}
+
+.overflow--hide {
+  overflow: hidden;
+}

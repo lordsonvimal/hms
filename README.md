@@ -15,25 +15,25 @@ This is a ROR + React project for managing student information
 * Rails serializer - Fast JSON Serializer
 * HMR (Hot module replacement)
 * SASS
-* IE Support
 * SQLite DB
+* ESLINT enabled
+* Flow enabled
+* Create PR and merge
+* React routing (Lazy loading) with chunking
 
 ## To include
 
 * Support file handling
 * Support mixins
 * Do build settings (Minify, chunking, etc.)
-* Add routing
-* Add eslint rules
 * Add stylelint and its rules
 * Integrate E2E
 * Integrate CI
 * Integrate CC
 * Add pdf support
-* Add flow
-* Add PR configuration
 * Free host in heroku
 * Add react components
 * Add style components
 * Add Internationalization
-
+* Add Manifest
+* Add Service worker
